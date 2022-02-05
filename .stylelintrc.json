@@ -1,0 +1,28 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "csstree/validator": true
+  },
+  "ignoreFiles": [
+    "build/**",
+    "dist/**",
+    "**/reset*.css",
+    "**/bootstrap*.css",
+    "**/includes.css",
+    "**/includes.scss",
+    "**/rdoc.css",
+    "**/paths.scss",
+    "**/helpers_test.scss",
+    "**/actiontext.scss",
+    "**/fsm.css",
+    "**/source-code-pro-regular.css",
+    "**/_top_level_partial.scss",
+    "*/syntax_error.scss",
+    "**/_without_css_ext.scss",
+    "**/_relative_scss.scss",
+    "**/syntax_error.scss"
+  ]
+}
