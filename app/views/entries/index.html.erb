@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Foodmenu &ndash; <%= DateTime.now.to_s %>
+  Foodmenu &ndash; <%= Time.now.strftime("%d of %B, %Y") %>
 <% end %>
 
 <div class="columns mt-4 is-centered">
@@ -16,5 +16,6 @@
     </div>
   <% end %>
 </div>
+
 
 <%# <%= link_to "New entry", new_entry_path %>
