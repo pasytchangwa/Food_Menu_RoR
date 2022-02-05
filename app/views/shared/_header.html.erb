@@ -14,23 +14,22 @@
           </span>
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
-          <div class="navbar-end">
-            
-            <%= link_to "Create new entry", new_entry_path, class: "button is success"  %>
+          <div class="navbar-end navbar-item">
+            <%= link_to "Create new entry", new_entry_path, class: "button is-success"  %>
           </div>
         </div>
       </div>
     </nav>
   </div>
-
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title">
-        Title
-      </p>
-      <p class="subtitle">
-        Subtitle
+        <% if content_for :title %>
+          <%= yield :title %>  
+        <% else %>
+          Foodmenu
+        <% end %>
       </p>
     </div>
   </div>
