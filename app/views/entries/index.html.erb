@@ -1,12 +1,20 @@
-<h1>Entries</h1>
+<% content_for :title do %>
+  Foodmenu &ndash; <%= DateTime.now.to_s %>
+<% end %>
 
-<div id="entries">
+<div class="columns mt-4 is-centered">
   <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
+    <div class="column is-one-quarter">
+      <div class="card">
+        <%= render entry %>
+        <div class="card-footer">
+          <%= link_to "Show", entry, class: "card-footer-item" %>
+          <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
+          <%= link_to "Delete", entry, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-footer-item" %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New entry", new_entry_path %>
+<%# <%= link_to "New entry", new_entry_path %>
