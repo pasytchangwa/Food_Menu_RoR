@@ -2,9 +2,9 @@
   Foodmenu &ndash; <%= Time.now.strftime("%d of %B, %Y") %>
 <% end %>
 
-<div class="columns mt-4 is-centered">
+<div class="columns mt-4 is-centered is-multiline">
   <% @entries.each do |entry| %>
-    <div class="column is-one-quarter">
+    <div class="column is-one-quarter-desktop is-one-third-tablet is-two-thirds-mobile">
       <div class="card">
         <%= render entry %>
         <div class="card-footer">
@@ -16,6 +16,3 @@
     </div>
   <% end %>
 </div>
-
-
-<%# <%= link_to "New entry", new_entry_path %>
