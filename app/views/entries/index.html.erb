@@ -6,11 +6,32 @@
   <% @entries.each do |entry| %>
     <div class="column is-one-quarter-desktop is-one-third-tablet is-two-thirds-mobile">
       <div class="card">
-        <%= render entry %>
+        <div class="card-header">
+          <p class="card-header-title">
+            <%= entry.meal_type %>
+          </p>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <p>
+              <span class="has-text-weight-bold">Calories: <%= entry.calories %>Kcal</span>
+            </p>
+            <p>
+              <span class="has-text-weight-bold">Proteins: <%= entry.proteins %>g</span>
+            </p>
+            <p>
+              <span class="has-text-weight-bold">Carbohydrates: <%= entry.carbohydrates %>g</span>
+            </p>
+            <p>
+              <span class="has-text-weight-bold">Fats: <%= entry.fats %>g</span>
+            </p>
+            <p class="italic">Logged <%= time_ago_in_words(entry.created_at) %> ago</p>
+          </div>
+        </div>
         <div class="card-footer">
           <%= link_to "Show", entry, class: "card-footer-item" %>
           <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
-          <%= link_to "Delete", entry, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-footer-item" %>
+          <%= link_to "Destroy", entry, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "card-footer-item" %>
         </div>
       </div>
     </div>
